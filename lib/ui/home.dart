@@ -147,31 +147,34 @@ class _FossaSepticaState extends State<FossaSeptica> {
   }
 
   void AvancarTela2(TextEditingController controleQntd) {
-
-    if ((controleQntd.text == null) || (controleQntd.text.isEmpty) || (controleQntd.text == "0") || (valor2_selecionado == "Clique para selecionar") || (valor1_selecionado == "Clique para selecionar")){
+    if ((controleQntd.text == null) ||
+        (controleQntd.text.isEmpty) ||
+        (controleQntd.text == "0") ||
+        (valor2_selecionado == "Clique para selecionar") ||
+        (valor1_selecionado == "Clique para selecionar")) {
       print("Não foi");
-    }
-      else {
+    } else {
       qntidadeEmDouble = double.parse(controleQntd.text);
       contDiariaOcup = contDiaria * qntidadeEmDouble;
 
-      if (contDiariaOcup <= 1500){
+      if (contDiariaOcup <= 1500) {
         pDetEsgoto = 1;
-      } else if (contDiariaOcup >= 1501 && contDiariaOcup <= 3000){
+      } else if (contDiariaOcup >= 1501 && contDiariaOcup <= 3000) {
         pDetEsgoto = 0.92;
-      } else if (contDiariaOcup >= 3001 && contDiariaOcup <= 4500){
+      } else if (contDiariaOcup >= 3001 && contDiariaOcup <= 4500) {
         pDetEsgoto = 0.83;
-      } else if (contDiariaOcup >= 4501 && contDiariaOcup <= 6000){
+      } else if (contDiariaOcup >= 4501 && contDiariaOcup <= 6000) {
         pDetEsgoto = 0.75;
-      } else if (contDiariaOcup >= 6001 && contDiariaOcup <= 7500){
+      } else if (contDiariaOcup >= 6001 && contDiariaOcup <= 7500) {
         pDetEsgoto = 0.67;
-      } else if (contDiariaOcup >= 7501 && contDiariaOcup <= 9000){
+      } else if (contDiariaOcup >= 7501 && contDiariaOcup <= 9000) {
         pDetEsgoto = 0.58;
-      } else if (contDiariaOcup >= 9001){
+      } else if (contDiariaOcup >= 9001) {
         pDetEsgoto = 0.50;
       }
-     //4 controleQntd.clear();
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Tela2()));
+      //4 controleQntd.clear();
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Tela2()));
 
       print("$qntidadeEmDouble");
       print("$contDiariaOcup");
@@ -179,14 +182,13 @@ class _FossaSepticaState extends State<FossaSeptica> {
     }
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calculadora Fossa Séptica"),
+        title: Text(
+          "Calculadora de Fossa Séptica",
+        ),
         backgroundColor: Colors.blue,
       ),
       body: ListView(
@@ -195,7 +197,10 @@ class _FossaSepticaState extends State<FossaSeptica> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: Text("Selecione o Tipo da Ocupação:", style: TextStyle(fontSize: 16.0),),
+                child: Text(
+                  "Selecione o Tipo da Ocupação:",
+                  style: TextStyle(fontSize: 16.0),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -214,7 +219,10 @@ class _FossaSepticaState extends State<FossaSeptica> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Selecione o Tipo do Prédio:", style: TextStyle(fontSize: 16.0),),
+                child: Text(
+                  "Selecione o Tipo do Prédio:",
+                  style: TextStyle(fontSize: 16.0),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -235,7 +243,10 @@ class _FossaSepticaState extends State<FossaSeptica> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Digite a quantidade de $tipagem:", style: TextStyle(fontSize: 16.0),),
+                child: Text(
+                  "Digite a quantidade de $tipagem:",
+                  style: TextStyle(fontSize: 16.0),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -259,13 +270,14 @@ class _FossaSepticaState extends State<FossaSeptica> {
                   ),
                 )),
               ),
-             ElevatedButton(
-               style: ButtonStyle(
-                 backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-               ),
-                  child: Text("Avançar >"),
-                  onPressed: ()=>AvancarTela2(controleQntd),
-             )
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                child: Text("Avançar >"),
+                onPressed: () => AvancarTela2(controleQntd),
+              )
             ],
           )
         ],

@@ -1,6 +1,7 @@
 # fossa_septica
 
 
+
 Português(BR)------
 
 Este aplicativo foi para o dimensionamento do tanque séptico (fossa) 
@@ -17,6 +18,11 @@ que é dependente do volume diário da contribuição de despejos e lodo fresco,
 tempo de detenção do afluente e do tempo de acumulação do lodo.
 
 Posteriormente, este mesmo aplicativo irá fazer o dimensionamento do Sumidouro.
+
+
+--------------------------------------------------------------------------------------------------
+
+
 
 English(EUA)------
 

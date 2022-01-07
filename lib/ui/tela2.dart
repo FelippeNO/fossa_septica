@@ -10,6 +10,31 @@ class Tela2 extends StatefulWidget {
 }
 
 class _Tela2State extends State<Tela2> {
+  List<DropdownMenuItem<String>> get dropdownItems3 {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(
+          child: Text("Clique para selecionar"),
+          value: "Clique para selecionar"),
+      DropdownMenuItem(child: Text("1 ano"), value: "1 anos"),
+      DropdownMenuItem(child: Text("2 anos"), value: "2 anos"),
+      DropdownMenuItem(child: Text("3 anos"), value: "3 anos"),
+      DropdownMenuItem(child: Text("4 anos"), value: "4 anos"),
+      DropdownMenuItem(child: Text("5 anos"), value: "5 anos"),
+    ];
+    return menuItems;
+  }
+
+  void AvancarCalculo(TextEditingController controleTemp) {
+    if ((controleTemp.text == null) ||
+        (controleTemp.text.isEmpty) ||
+        (controleTemp.text == "0") ||
+        (valor3_selecionado == "Clique para selecionar")) {
+      print("Não foi");
+    } else {
+      qntidadeTempEmDouble = double.parse(controleTemp.text);
+    }
+  }
+
   @override
   final TextEditingController controleTemp = new TextEditingController();
   Widget build(BuildContext context) {
@@ -60,10 +85,35 @@ class _Tela2State extends State<Tela2> {
                 ),
               ),
             ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Selecione o Intervalo entre as limpezas do tanque séptico, em anos:",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DropdownButton(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    value: valor3_selecionado,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        valor3_selecionado = newValue!;
+                      });
+                    },
+                    items: dropdownItems3,
+                  ),
+                ),
+              ],
+            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                "Digite a temperatura mais alta do mês mais frio, em Celsius:",
+                "Digite a temperatura média do mês mais frio da tua cidade, em Celsius:",
                 style: TextStyle(fontSize: 16.0),
                 textAlign: TextAlign.center,
               ),
@@ -71,7 +121,9 @@ class _Tela2State extends State<Tela2> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: (TextField(
-                enabled: true,
+                enabled: valor3_selecionado != "Clique para selecionar"
+                    ? true
+                    : false,
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.blue,
                 style: TextStyle(color: Colors.blue, fontSize: 12),
@@ -88,9 +140,23 @@ class _Tela2State extends State<Tela2> {
                 ),
               )),
             ),
+            Column(
+              children: [
+                SizedBox(
+                  width: 150,
+                  height: 60,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    child: Text("CALCULAR"),
+                    onPressed: null,
+                  ),
+                ),
+              ],
+            ),
           ],
         ));
   }
 }
-//by Felippe Negrão 4
-
