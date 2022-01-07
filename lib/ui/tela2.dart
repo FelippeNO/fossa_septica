@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/main.dart';
 import 'package:fossa_septica/ui/home.dart';
@@ -69,9 +71,7 @@ class _Tela2State extends State<Tela2> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: (TextField(
-                enabled: valor2_selecionado != "Clique para selecionar"
-                    ? true
-                    : false,
+                enabled: true,
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.blue,
                 style: TextStyle(color: Colors.blue, fontSize: 12),
@@ -92,5 +92,5 @@ class _Tela2State extends State<Tela2> {
         ));
   }
 }
-//by Felippe Negrão 3
+//by Felippe Negrão 4
 
