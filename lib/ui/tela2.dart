@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/main.dart';
 import 'package:fossa_septica/ui/home.dart';
+import 'package:fossa_septica/ui/tela_resultado_vol_util.dart';
 
 class Tela2 extends StatefulWidget {
   @override
@@ -32,6 +33,8 @@ class _Tela2State extends State<Tela2> {
       print("Não foi");
     } else {
       qntidadeTempEmDouble = double.parse(controleTemp.text);
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => Tela_Resultado_Vol_Util()));
     }
   }
 
@@ -151,7 +154,7 @@ class _Tela2State extends State<Tela2> {
                           MaterialStateProperty.all<Color>(Colors.blue),
                     ),
                     child: Text("CALCULAR"),
-                    onPressed: null,
+                    onPressed: () => AvancarCalculo(controleTemp),
                   ),
                 ),
               ],

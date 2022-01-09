@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/main.dart';
 import 'package:fossa_septica/ui/tela2.dart';

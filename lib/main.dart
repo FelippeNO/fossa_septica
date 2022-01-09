@@ -20,4 +20,4 @@ double tempMesFrio = 0;
 double intervaloLimpeza = 0;
 double K = 0;
 
-void main() => runApp(new MaterialApp(home: new FossaSeptica()));
+void main() => runApp(MaterialApp(home: FossaSeptica()));
