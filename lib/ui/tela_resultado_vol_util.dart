@@ -66,13 +66,10 @@ class _Tela_Resultado_Vol_UtilState extends State<Tela_Resultado_Vol_Util> {
                           "Intervalo entre as limpezas: $valor3_selecionado",
                           style: TextStyle(color: Colors.white)),
                       Text(
-                          "Temperatura média do mês mais frio: $qntidadeTempEmDouble Celsius",
+                          "Temperatura média do mês mais frio: $qntidadeTempEmDouble °C",
                           style: TextStyle(color: Colors.white)),  
                       Text(
                           "Taxa de acumulação de lodo (K): $K",
-                          style: TextStyle(color: Colors.white)),
-                      Text(
-                          "lo ${calcularVolumeUtil(volumeUtil)}",
                           style: TextStyle(color: Colors.white)),
                     ],
                   ),
@@ -160,5 +157,6 @@ volumeUtil = SomaNxCxTKxLf * 1/1000;
 
 debugPrint("$volumeUtil");
 return volumeUtil;
-
 }
+
+//felippe
