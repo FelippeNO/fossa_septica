@@ -19,5 +19,6 @@ double pDetEsgoto = 0;
 double tempMesFrio = 0;
 double intervaloLimpeza = 0;
 double K = 0;
+double volumeUtil = 0;
 
 void main() => runApp(MaterialApp(home: FossaSeptica()));
