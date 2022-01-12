@@ -4,7 +4,7 @@
 
 Português(BR)------
 
-Este aplicativo foi para o dimensionamento do tanque séptico (fossa) 
+Este aplicativo foi feito para o dimensionamento do tanque séptico (fossa) 
 para tratamento dos efluentes no projeto sanitário de diversos tipos de edificações,
 atendendo as especificações da ABNT NBR 7229/1993.
 
@@ -26,7 +26,7 @@ Posteriormente, este mesmo aplicativo irá fazer o dimensionamento do Sumidouro.
 
 English(EUA)------
 
-This app was for sizing the septic tank (septic tank) for the treatment of effluents
+This app was made for sizing the septic tank (septic tank) for the treatment of effluents
 in the sanitary design of different types of buildings, meeting the specifications of 
 ABNT NBR 7229/1993.
 

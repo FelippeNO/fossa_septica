@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fossa_septica/ui/home2.dart';
 import 'ui/home.dart';
 
 //VARIÁVEIS GLOBAIS
@@ -21,4 +22,6 @@ double intervaloLimpeza = 0;
 double K = 0;
 double volumeUtil = 0;
 
-void main() => runApp(MaterialApp(home: FossaSeptica()));
+void main() => runApp(MaterialApp(home: Fossa_Septica2()));
+
+//void main() => runApp(MaterialApp(home: Fossa_Septica()));
