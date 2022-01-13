@@ -89,7 +89,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                               // primeira linha de texto e opcao
                               padding: const EdgeInsets.all(3.0),
                               child: Container(
-                                child: IconButton(onPressed: null, icon: Image.asset('fossa_septica_sumidouro_botao.png'),),
+                                child: IconButton(onPressed: null, icon: Image.asset('assets/images/fossa_septica_sumidouro_botao.png'),),
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Color.fromRGBO(255, 191, 64, 1),
@@ -151,7 +151,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Container(
-                                child: IconButton(onPressed: null, icon: Image.asset('fossa_septica_botao.png'),),
+                                child: IconButton(onPressed: null, icon: Image.asset('assets/images/fossa_septica_botao.png'),),
                                 //opcao 2
                                 height: 150,
                                 width: 150,
@@ -178,7 +178,11 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                   style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1)
                   )
                   ), 
-                  onPressed: null,
+                  onPressed: () {showDialog(
+                    context: context, 
+                    builder: (BuildContext context) 
+                    {return MensagemSobreOApp;});
+                      },
                   style: ButtonStyle(
                     elevation: MaterialStateProperty.all(3),
                     shadowColor: MaterialStateProperty.all(Colors.black),
@@ -195,4 +199,25 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
       ),
     );
   }
+
+var MensagemSobreOApp = AlertDialog(
+  scrollable: true,
+  title: Text("Sobre este App", textAlign: TextAlign.center,),
+  content: Text(
+"Este aplicativo foi feito para o dimensionamento do tanque séptico para tratamento" 
+"dos efluentes no projeto sanitário de diversos tipos de edificações, atendendo as"
+"especificações da ABNT NBR 7229/1993.\n\n"
+
+"O tanque séptico, comumente chamado de fossa séptica, corresponde a uma unidade cilíndrica" 
+"ou prismática retangular de fluxo horizontal, conforme consta na NBR 7229/1993, e diz" 
+"respeito à uma alternativa ao tratamento descentralizado de esgotos por processos de" 
+"sedimentação, flotação e digestão.\n\n"
+
+"O aplicativo realiza o dimensionamento do tanque séptico com o cálculo do volume útil estimado," 
+"que é dependente do volume diário da contribuição de despejos e lodo fresco, bem como do" 
+"tempo de detenção do afluente e do tempo de acumulação do lodo.\n\n"
+
+"Posteriormente, este mesmo aplicativo irá fazer o dimensionamento do Sumidouro.\n\n"
+"Aplicativo criado por \nFelippe Negrão de Oliveira", textAlign: TextAlign.center, style: TextStyle(fontSize: 14.0),),
+  );
 }
