@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fossa_septica/ui/home2.dart';
 import 'ui/home.dart';
 
+
 //VARIÁVEIS GLOBAIS
 
 String valor1_selecionado = "Clique para selecionar";
@@ -24,4 +25,4 @@ double volumeUtil = 0;
 
 void main() => runApp(MaterialApp(home: Fossa_Septica2()));
 
-//void main() => runApp(MaterialApp(home: Fossa_Septica()));
+//void main() => runApp(MaterialApp(home: FossaSeptica()));
