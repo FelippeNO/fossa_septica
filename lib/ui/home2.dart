@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/main.dart';
+import 'package:fossa_septica/ui/tela1calculo_fossa.dart';
 import 'package:fossa_septica/ui/tela2.dart';
 import 'package:fossa_septica/ui/home.dart';
 
@@ -95,7 +96,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                         Navigator.of(context).push(
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    FossaSeptica()));
+                                                    Tela1CalculoFossa()));
                                       },
                                       icon: Image.asset(
                                           'assets/images/fossa_septica_sumidouro_botao.png'),
