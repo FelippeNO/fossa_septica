@@ -64,8 +64,7 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
         contDiaria = 100;
         lF = 1.00;
         tipagem = "pessoas";
-      } else if (valor2_selecionado ==
-          "04 - Hotel (Exceto lavanderia e cozinha") {
+      } else if (valor2_selecionado == "04 - Hotel (Exceto lavanderia e cozinha)") {
         contDiaria = 100;
         lF = 1.00;
         tipagem = "pessoas";
@@ -90,8 +89,8 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
         DropdownMenuItem(
             child: Text("07 - Escritório"), value: "07 - Escritório"),
         DropdownMenuItem(
-            child: Text("08 - Edifícios públicos ou comerciais"),
-            value: "08 - Edifícios públicos ou comerciais"),
+            child: Text("08 - Edifícios públicos ou\n comerciais"),
+            value: "08 - Edifícios públicos ou\n comerciais"),
         DropdownMenuItem(
             child: Text(
                 "09 - Escolas (externatos) e \nlocais de longa permanência"),
@@ -117,7 +116,7 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
         lF = 0.20;
         tipagem = "pessoas";
       } else if (valor2_selecionado ==
-          "08 - Edifícios públicos ou comerciais") {
+          "08 - Edifícios públicos ou\n comerciais") {
         contDiaria = 50;
         lF = 0.20;
         tipagem = "pessoas";
@@ -193,6 +192,7 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        leading: BackButton(color: Color.fromRGBO(112, 112, 122, 1)),
         toolbarHeight: MediaQuery.of(context).size.height * 0.10,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(26))),
