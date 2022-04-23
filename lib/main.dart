@@ -3,7 +3,6 @@ import 'package:fossa_septica/ui/home2.dart';
 import 'ui/home.dart';
 import 'ui/intro.dart';
 
-
 //VARIÁVEIS GLOBAIS
 
 String valor1_selecionado = "Clique para selecionar";

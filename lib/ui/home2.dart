@@ -1,12 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fossa_septica/main.dart';
-import 'package:fossa_septica/ui/models/square_button.dart';
+import 'package:fossa_septica/core/colors.dart';
+import 'package:fossa_septica/core/scale.dart';
+import 'package:fossa_septica/ui/widgets/orange_box.dart';
+import 'package:fossa_septica/ui/widgets/square_button.dart';
 import 'package:fossa_septica/ui/tela1calculo_fossa.dart';
-import 'package:fossa_septica/ui/tela2.dart';
-import 'package:fossa_septica/ui/home.dart';
 
 class Fossa_Septica2 extends StatefulWidget {
   const Fossa_Septica2({Key? key}) : super(key: key);
@@ -36,8 +35,8 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.bottomCenter, end: Alignment.topCenter, colors: const [
-              Color.fromRGBO(27, 87, 179, 1), //azul escuro
-              Color.fromRGBO(64, 139, 255, 1), //azul padrao
+              AppColors.denimSECUNDARY, //azul escuro
+              AppColors.dodgerBluePRIMARY, //azul padrao
             ]),
           ),
           child: Column(
@@ -54,23 +53,9 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                         children: [
                           Padding(
                             padding: EdgeInsets.all(25),
-                            child: Container(
-                                //inicio primeiro texto com fundo laranja
-                                height: 50,
-                                width: 300,
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(255, 191, 64, 1), //laranja padrao
-                                    borderRadius: BorderRadius.all(Radius.circular(25))),
-                                child: Center(
-                                  child: Text(
-                                    "O que você deseja calcular?",
-                                    style: TextStyle(
-                                        color: Color.fromRGBO(64, 139, 255, 1), // azul padrao
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 19.0),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                )), //fim primeiro texto com fundo laranja
+                            child: OrangeBox(
+                              'O que você deseja calcular?',
+                            ), //fim primeiro texto com fundo laranja
                           ),
                           Padding(
                             padding: EdgeInsets.all(10),
@@ -81,21 +66,10 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                 Padding(
                                   // primeira linha de texto e opcao
                                   padding: const EdgeInsets.all(3.0),
-                                  child: Container(
-                                    child: IconButton(
-                                      onPressed: () {
-                                        Navigator.of(context)
-                                            .push(MaterialPageRoute(builder: (context) => Tela1CalculoFossa()));
-                                      },
-                                      icon: Image.asset('assets/images/fossa_septica_sumidouro_botao.png'),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Color.fromRGBO(255, 191, 64, 1), width: 5.0),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                                    // opcao 1
-                                    height: 150,
-                                    width: 150,
+                                  child: SquareButton(
+                                    onPressed: () => Navigator.of(context)
+                                        .push(MaterialPageRoute(builder: (context) => Tela1CalculoFossa())),
+                                    imageFile: 'assets/images/fossa_septica_sumidouro_botao.png',
                                   ),
                                 ),
                                 Padding(
@@ -125,7 +99,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(Scale.width(3)),
                                   child: SizedBox(
                                     //texto 2
                                     height: 150,
@@ -141,8 +115,10 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: SquareButton(),
+                                  padding: EdgeInsets.all(Scale.width(3)),
+                                  child: SquareButton(
+                                    imageFile: 'assets/images/fossa_septica_botao.png',
+                                  ),
                                 )
                               ],
                             ),

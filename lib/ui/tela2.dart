@@ -13,9 +13,7 @@ class Tela2 extends StatefulWidget {
 class _Tela2State extends State<Tela2> {
   List<DropdownMenuItem<String>> get dropdownItems3 {
     List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(
-          child: Text("Clique para selecionar"),
-          value: "Clique para selecionar"),
+      DropdownMenuItem(child: Text("Clique para selecionar"), value: "Clique para selecionar"),
       DropdownMenuItem(child: Text("1 ano"), value: "1 anos"),
       DropdownMenuItem(child: Text("2 anos"), value: "2 anos"),
       DropdownMenuItem(child: Text("3 anos"), value: "3 anos"),
@@ -34,8 +32,7 @@ class _Tela2State extends State<Tela2> {
     } else {
       qntidadeTempEmDouble = double.parse(controleTemp.text);
 
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => Tela_Resultado_Vol_Util()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => Tela_Resultado_Vol_Util()));
     }
   }
 
@@ -54,16 +51,13 @@ class _Tela2State extends State<Tela2> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      color: Colors.blue,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black54,
-                          blurRadius: 5.0,
-                          offset: Offset(0.0, 0.75),
-                        )
-                      ]),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0), color: Colors.blue, boxShadow: [
+                    BoxShadow(
+                      color: Colors.black54,
+                      blurRadius: 5.0,
+                      offset: Offset(0.0, 0.75),
+                    )
+                  ]),
                   height: 150.0,
                   padding: EdgeInsets.all(3.0),
                   margin: EdgeInsets.all(3.0),
@@ -74,15 +68,11 @@ class _Tela2State extends State<Tela2> {
                         "Tipo da Ocupação: $valor1_selecionado",
                         style: TextStyle(color: Colors.white),
                       ),
-                      Text("Tipo do Prédio: $valor2_selecionado",
+                      Text("Tipo do Prédio: $valor2_selecionado", style: TextStyle(color: Colors.white)),
+                      Text("Quantidade de $tipagem: ${qntidadeEmDouble.toInt()}",
                           style: TextStyle(color: Colors.white)),
-                      Text(
-                          "Quantidade de $tipagem: ${qntidadeEmDouble.toInt()}",
-                          style: TextStyle(color: Colors.white)),
-                      Text("Contribuição Diária: $contDiaria L/dia/pessoa",
-                          style: TextStyle(color: Colors.white)),
-                      Text(
-                          "Contribuição Diária da Ocupação: $contDiariaOcup L/dia",
+                      Text("Contribuição Diária: $contDiaria L/dia/pessoa", style: TextStyle(color: Colors.white)),
+                      Text("Contribuição Diária da Ocupação: $contDiariaOcup L/dia",
                           style: TextStyle(color: Colors.white)),
                     ],
                   ),
@@ -125,22 +115,18 @@ class _Tela2State extends State<Tela2> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: (TextField(
-                enabled: valor3_selecionado != "Clique para selecionar"
-                    ? true
-                    : false,
+                enabled: valor3_selecionado != "Clique para selecionar" ? true : false,
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.blue,
                 style: TextStyle(color: Colors.blue, fontSize: 12),
                 controller: controleTemp,
                 decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue, width: 3.0)),
+                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue, width: 3.0)),
                   labelStyle: TextStyle(color: Colors.blue),
                   hintText: "",
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue, width: 1.5),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(20.0))),
+                      borderRadius: const BorderRadius.all(Radius.circular(20.0))),
                 ),
               )),
             ),
@@ -151,8 +137,7 @@ class _Tela2State extends State<Tela2> {
                   height: 60,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
                     ),
                     child: Text("CALCULAR"),
                     onPressed: () => AvancarCalculo(controleTemp),
