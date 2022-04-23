@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/main.dart';
+import 'package:fossa_septica/ui/models/square_button.dart';
 import 'package:fossa_septica/ui/tela1calculo_fossa.dart';
 import 'package:fossa_septica/ui/tela2.dart';
 import 'package:fossa_septica/ui/home.dart';
@@ -21,30 +22,23 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         toolbarHeight: MediaQuery.of(context).size.height * 0.15,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(26))),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(26))),
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "Calculadora de Fossa Séptica e"
           "\n Sumidouro",
           textAlign: TextAlign.center,
-          style: TextStyle(
-              color: Color.fromRGBO(112, 112, 122, 1),
-              fontSize: 21.0,
-              fontWeight: FontWeight.bold),
+          style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1), fontSize: 21.0, fontWeight: FontWeight.bold),
         ),
       ),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-                colors: const [
-                  Color.fromRGBO(27, 87, 179, 1), //azul escuro
-                  Color.fromRGBO(64, 139, 255, 1), //azul padrao
-                ]),
+            gradient: LinearGradient(begin: Alignment.bottomCenter, end: Alignment.topCenter, colors: const [
+              Color.fromRGBO(27, 87, 179, 1), //azul escuro
+              Color.fromRGBO(64, 139, 255, 1), //azul padrao
+            ]),
           ),
           child: Column(
             children: [
@@ -65,16 +59,13 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                 height: 50,
                                 width: 300,
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(
-                                        255, 191, 64, 1), //laranja padrao
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(25))),
+                                    color: Color.fromRGBO(255, 191, 64, 1), //laranja padrao
+                                    borderRadius: BorderRadius.all(Radius.circular(25))),
                                 child: Center(
                                   child: Text(
                                     "O que você deseja calcular?",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(
-                                            64, 139, 255, 1), // azul padrao
+                                        color: Color.fromRGBO(64, 139, 255, 1), // azul padrao
                                         fontWeight: FontWeight.bold,
                                         fontSize: 19.0),
                                     textAlign: TextAlign.center,
@@ -93,22 +84,15 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                   child: Container(
                                     child: IconButton(
                                       onPressed: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    Tela1CalculoFossa()));
+                                        Navigator.of(context)
+                                            .push(MaterialPageRoute(builder: (context) => Tela1CalculoFossa()));
                                       },
-                                      icon: Image.asset(
-                                          'assets/images/fossa_septica_sumidouro_botao.png'),
+                                      icon: Image.asset('assets/images/fossa_septica_sumidouro_botao.png'),
                                     ),
                                     decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color:
-                                                Color.fromRGBO(255, 191, 64, 1),
-                                            width: 5.0),
+                                        border: Border.all(color: Color.fromRGBO(255, 191, 64, 1), width: 5.0),
                                         color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(25))),
+                                        borderRadius: BorderRadius.all(Radius.circular(25))),
                                     // opcao 1
                                     height: 150,
                                     width: 150,
@@ -123,10 +107,8 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                     child: Center(
                                       child: Text(
                                         "Fossa Séptica e o\n Sumidouro",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 17.0),
+                                        style:
+                                            TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17.0),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -151,10 +133,8 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                     child: Center(
                                       child: Text(
                                         "Somente a Fossa Séptica",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 17.0),
+                                        style:
+                                            TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17.0),
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
@@ -162,24 +142,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(10.0),
-                                  child: Container(
-                                    child: IconButton(
-                                      onPressed: null,
-                                      icon: Image.asset(
-                                          'assets/images/fossa_septica_botao.png'),
-                                    ),
-                                    //opcao 2
-                                    height: 150,
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color:
-                                                Color.fromRGBO(255, 191, 64, 1),
-                                            width: 5.0),
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(25))),
-                                  ),
+                                  child: SquareButton(),
                                 )
                               ],
                             ),
@@ -191,9 +154,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  child: Text("Sobre o App",
-                      style:
-                          TextStyle(color: Color.fromRGBO(112, 112, 122, 1))),
+                  child: Text("Sobre o App", style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1))),
                   onPressed: () {
                     showDialog(
                         context: context,
@@ -204,8 +165,8 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                   style: ButtonStyle(
                       elevation: MaterialStateProperty.all(3),
                       shadowColor: MaterialStateProperty.all(Colors.black),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0))),
+                      shape:
+                          MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0))),
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
                 ),
               ),
