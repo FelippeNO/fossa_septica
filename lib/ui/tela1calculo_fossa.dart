@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:fossa_septica/core/scale.dart';
 import 'package:fossa_septica/main.dart';
 import 'package:fossa_septica/ui/tela2.dart';
+import 'package:fossa_septica/ui/widgets/orange_box.dart';
+import 'package:fossa_septica/ui/widgets/rounded_primary_appbar.dart';
 
 class Tela1CalculoFossa extends StatefulWidget {
   const Tela1CalculoFossa({Key? key}) : super(key: key);
@@ -164,18 +167,8 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        leading: BackButton(color: Color.fromRGBO(112, 112, 122, 1)),
-        toolbarHeight: MediaQuery.of(context).size.height * 0.10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(26))),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text(
-          "Calculadora de Fossa Séptica e"
-          "\n Sumidouro",
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1), fontSize: 18.0, fontWeight: FontWeight.bold),
-        ),
+      appBar: RoundedPrimaryAppBar(
+        fontSize: AppFontSize.s1,
       ),
       body: Center(
         child: Container(
@@ -191,23 +184,10 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
                 children: [
                   Padding(
                     padding: EdgeInsets.all(20),
-                    child: Container(
-                        //inicio primeiro texto com fundo laranja
-                        height: 40,
-                        width: 220,
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 191, 64, 1), //laranja padrao
-                            borderRadius: BorderRadius.all(Radius.circular(25))),
-                        child: Center(
-                          child: Text(
-                            "Selecione o tipo da Ocupação:",
-                            style: TextStyle(
-                                color: Color.fromRGBO(64, 139, 255, 1), // azul padrao
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        )),
+                    child: OrangeBox(
+                      'Selecione o tipo da ocupação',
+                      fontSize: AppFontSize.s2,
+                    ),
                   ),
                   Padding(
                     // COMEÇA AQUI O PRIMEIRO DROPDOWN
@@ -243,23 +223,10 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
                   ), // TERMINA AQUI O PRIMEIRO DROPDOWN
                   Padding(
                     padding: EdgeInsets.all(20),
-                    child: Container(
-                        //inicio segundo texo fundo laranja
-                        height: 40,
-                        width: 220,
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 191, 64, 1), //laranja padrao
-                            borderRadius: BorderRadius.all(Radius.circular(25))),
-                        child: Center(
-                          child: Text(
-                            "Selecione o tipo do Prédio:",
-                            style: TextStyle(
-                                color: Color.fromRGBO(64, 139, 255, 1), // azul padrao
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        )),
+                    child: OrangeBox(
+                      'Selecione o tipo do prédio',
+                      fontSize: AppFontSize.s2,
+                    ),
                   ),
                   Padding(
                     // COMEÇA AQUI O SEGUNDO DROPDOWN
@@ -296,25 +263,11 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> {
                     ),
                   ), //SEGUNDO DROPDOWN FIM
                   Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Container(
-                        //inicio segundo texo fundo laranja
-                        height: 40,
-                        width: 250,
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 191, 64, 1), //laranja padrao
-                            borderRadius: BorderRadius.all(Radius.circular(25))),
-                        child: Center(
-                          child: Text(
-                            "Digite a quantidade de $tipagem:",
-                            style: TextStyle(
-                                color: Color.fromRGBO(64, 139, 255, 1), // azul padrao
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0),
-                            textAlign: TextAlign.center,
-                          ),
-                        )),
-                  ),
+                      padding: EdgeInsets.all(15),
+                      child: OrangeBox(
+                        'Digite a quantidade de $tipagem',
+                        fontSize: AppFontSize.s2,
+                      )),
                   Padding(
                     padding: const EdgeInsets.only(left: 100.0, right: 100.0, top: 15.0, bottom: 15.0),
                     child: (TextFormField(

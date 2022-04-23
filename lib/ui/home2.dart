@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fossa_septica/core/colors.dart';
 import 'package:fossa_septica/core/scale.dart';
 import 'package:fossa_septica/ui/widgets/orange_box.dart';
+import 'package:fossa_septica/ui/widgets/rounded_primary_appbar.dart';
 import 'package:fossa_septica/ui/widgets/square_button.dart';
 import 'package:fossa_septica/ui/tela1calculo_fossa.dart';
 
@@ -19,17 +20,10 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        toolbarHeight: MediaQuery.of(context).size.height * 0.15,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(26))),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text(
-          "Calculadora de Fossa Séptica e"
-          "\n Sumidouro",
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1), fontSize: 21.0, fontWeight: FontWeight.bold),
-        ),
+      appBar: RoundedPrimaryAppBar(
+        height: 1.5,
+        isHome: true,
+        fontSize: AppFontSize.appBarTitleH1,
       ),
       body: Center(
         child: Container(
@@ -55,6 +49,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                             padding: EdgeInsets.all(25),
                             child: OrangeBox(
                               'O que você deseja calcular?',
+                              fontSize: AppFontSize.s1,
                             ), //fim primeiro texto com fundo laranja
                           ),
                           Padding(

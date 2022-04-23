@@ -4,7 +4,8 @@ import 'package:fossa_septica/core/scale.dart';
 
 class OrangeBox extends StatelessWidget {
   final String text;
-  const OrangeBox(this.text, {Key? key}) : super(key: key);
+  final double fontSize;
+  const OrangeBox(this.text, {Key? key, this.fontSize = 10}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class OrangeBox extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(color: AppColors.dodgerBluePRIMARY, fontWeight: FontWeight.bold, fontSize: 19.0),
+            style: TextStyle(color: AppColors.dodgerBluePRIMARY, fontWeight: FontWeight.bold, fontSize: fontSize),
             textAlign: TextAlign.center,
           ),
         ),
