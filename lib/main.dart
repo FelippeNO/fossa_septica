@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fossa_septica/ui/home2.dart';
-import 'ui/home.dart';
-import 'ui/intro.dart';
+import 'package:fossa_septica/ui/views/home2.dart';
+import 'ui/views/intro.dart';
 
 //VARIÁVEIS GLOBAIS
 
-String valor1_selecionado = "Clique para selecionar";
-String valor2_selecionado = "Clique para selecionar";
-String valor3_selecionado = "Clique para selecionar";
+int valor3selecionado = 0;
 int tipOcup = 0;
 int tipPredio = 0;
 double contDiaria = 0;

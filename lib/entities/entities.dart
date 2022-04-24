@@ -1,15 +1,15 @@
 class FossaEntity {
-  final double contDiaria;
-  final double lF;
-  final String tipagem;
-  final double qntidadeEmDouble;
-  final double qntidadeTempEmDouble;
-  final double contDiariaOcup;
-  final double pDetEsgoto;
-  final double tempMesFrio;
-  final double intervaloLimpeza;
-  final double K;
-  final double volumeUtil;
+  double contDiaria;
+  double lF;
+  String tipagem;
+  double qntidadeEmDouble;
+  double qntidadeTempEmDouble;
+  double contDiariaOcup;
+  double pDetEsgoto;
+  double tempMesFrio;
+  double intervaloLimpeza;
+  double K;
+  double volumeUtil;
 
   FossaEntity({
     this.contDiaria = 0,

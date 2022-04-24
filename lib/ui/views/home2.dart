@@ -3,19 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/core/colors.dart';
 import 'package:fossa_septica/core/scale.dart';
-import 'package:fossa_septica/ui/widgets/orange_box.dart';
+import 'package:fossa_septica/ui/widgets/primary_rounded_box.dart';
+import 'package:fossa_septica/ui/widgets/primary_rounded_box_button.dart';
 import 'package:fossa_septica/ui/widgets/rounded_primary_appbar.dart';
 import 'package:fossa_septica/ui/widgets/square_button.dart';
-import 'package:fossa_septica/ui/tela1calculo_fossa.dart';
+import 'package:fossa_septica/ui/views/tela1calculo_fossa.dart';
 
-class Fossa_Septica2 extends StatefulWidget {
-  const Fossa_Septica2({Key? key}) : super(key: key);
+class FossaSeptica2 extends StatefulWidget {
+  const FossaSeptica2({Key? key}) : super(key: key);
 
   @override
-  _Fossa_Septica2State createState() => _Fossa_Septica2State();
+  FossaSeptica2State createState() => FossaSeptica2State();
 }
 
-class _Fossa_Septica2State extends State<Fossa_Septica2> {
+class FossaSeptica2State extends State<FossaSeptica2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +30,8 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.bottomCenter, end: Alignment.topCenter, colors: const [
-              AppColors.denimSECUNDARY, //azul escuro
-              AppColors.dodgerBluePRIMARY, //azul padrao
+              AppColors.denimSECUNDARY,
+              AppColors.dodgerBluePRIMARY,
             ]),
           ),
           child: Column(
@@ -47,7 +48,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
                         children: [
                           Padding(
                             padding: EdgeInsets.all(25),
-                            child: OrangeBox(
+                            child: PrimaryRoundedBox(
                               'O que você deseja calcular?',
                               fontSize: AppFontSize.s1,
                             ), //fim primeiro texto com fundo laranja
@@ -124,22 +125,13 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  child: Text("Sobre o App", style: TextStyle(color: Color.fromRGBO(112, 112, 122, 1))),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return MensagemSobreOApp;
-                        });
-                  },
-                  style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(3),
-                      shadowColor: MaterialStateProperty.all(Colors.black),
-                      shape:
-                          MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0))),
-                      backgroundColor: MaterialStateProperty.all(Colors.white)),
-                ),
+                child: PrimaryRoundedBoxButton("Sobre o App", onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return mensagemSobreOApp;
+                      });
+                }),
               ),
             ],
           ),
@@ -148,7 +140,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
     );
   }
 
-  var MensagemSobreOApp = AlertDialog(
+  AlertDialog mensagemSobreOApp = AlertDialog(
     scrollable: true,
     title: Text(
       "Sobre este App",
@@ -168,7 +160,7 @@ class _Fossa_Septica2State extends State<Fossa_Septica2> {
       "Posteriormente, este mesmo aplicativo irá fazer o dimensionamento do Sumidouro.\n\n"
       "Aplicativo criado por \nFelippe Negrão de Oliveira",
       textAlign: TextAlign.center,
-      style: TextStyle(fontSize: 14.0),
+      style: TextStyle(fontSize: AppFontSize.s2),
     ),
   );
 }

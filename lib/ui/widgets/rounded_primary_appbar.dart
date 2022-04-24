@@ -19,7 +19,7 @@ class RoundedPrimaryAppBar extends StatelessWidget implements PreferredSizeWidge
     return AppBar(
       leading: isHome == true ? null : const BackButton(color: AppColors.rollingStone),
       toolbarHeight: Scale.width(20),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(Scale.width(8)))),
+      shape: RoundedRectangleBorder(borderRadius: AppBorderRadius.brVerticalBot8),
       backgroundColor: Colors.white,
       centerTitle: true,
       title: Text(

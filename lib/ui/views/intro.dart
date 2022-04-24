@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fossa_septica/core/scale.dart';
-import 'package:fossa_septica/ui/home2.dart';
+import 'package:fossa_septica/ui/views/home2.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:splashscreen/splashscreen.dart';
 
@@ -18,7 +18,7 @@ class _IntroState extends State<Intro> {
         SplashScreen(
           seconds: 3,
           backgroundColor: Colors.white,
-          navigateAfterSeconds: Fossa_Septica2(),
+          navigateAfterSeconds: FossaSeptica2(),
           loaderColor: Colors.transparent,
         ),
         Center(
