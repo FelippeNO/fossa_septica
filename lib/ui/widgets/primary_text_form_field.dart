@@ -29,6 +29,7 @@ class PrimaryTextFormField extends StatelessWidget {
       style: TextStyle(color: primaryColor, fontSize: AppFontSize.s2, fontWeight: FontWeight.bold),
       controller: textController,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(vertical: 1),
         enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black.withOpacity(0.5), width: 2.5),
             borderRadius: AppBorderRadius.brAll2),

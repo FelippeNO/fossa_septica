@@ -3,59 +3,111 @@ import 'package:fossa_septica/entities/entities.dart';
 
 class Tela1Controller {
   static late FossaEntity fossaPrincipal;
-  final TextEditingController controleQntd = TextEditingController();
-  static int valor1Selecionado = 0;
-  static int valor2Selecionado = 0;
+  static TextEditingController controleQntd = TextEditingController();
+  static int valorOcup = 0;
+  static int valorPred = 0;
 
-  void initialize() {}
+  //STRINGS SELECÃO
+  static String cliqueParaSelecionar = "Clique para selecionar";
 
-  // void handleAvancarTela2Button(TextEditingController controleQntd) {
-  //   if ((controleQntd.text == null) ||
-  //       (controleQntd.text.isEmpty) ||
-  //       (controleQntd.text == "0") ||
-  //       (valor2Selecionado == 0) ||
-  //       (valor1Selecionado == 0)) {
-  //     print("Não foi");
-  //   } else {
-  //     fossaPrincipal.qntidadeEmDouble = double.parse(controleQntd.text);
-  //     fossaPrincipal.contDiariaOcup = fossaPrincipal.contDiaria * fossaPrincipal.qntidadeEmDouble;
+  static String perm = "Permanente";
+  static String temp = "Temporária";
 
-  //     if (fossaPrincipal.contDiariaOcup <= 1500) {
-  //       fossaPrincipal.pDetEsgoto = 1;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 1501 && fossaPrincipal.contDiariaOcup <= 3000) {
-  //       fossaPrincipal.pDetEsgoto = 0.92;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 3001 && fossaPrincipal.contDiariaOcup <= 4500) {
-  //       fossaPrincipal.pDetEsgoto = 0.83;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 4501 && fossaPrincipal.contDiariaOcup <= 6000) {
-  //       fossaPrincipal.pDetEsgoto = 0.75;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 6001 && fossaPrincipal.contDiariaOcup <= 7500) {
-  //       fossaPrincipal.pDetEsgoto = 0.67;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 7501 && fossaPrincipal.contDiariaOcup <= 9000) {
-  //       fossaPrincipal.pDetEsgoto = 0.58;
-  //     } else if (fossaPrincipal.contDiariaOcup >= 9001) {
-  //       fossaPrincipal.pDetEsgoto = 0.50;
-  //     }
-  //     //4 controleQntd.clear();
-  //     // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Tela2()));
+  static String residpa = "01 - Residência Padrão Alto";
+  static String residpm = "02 - Residência Padrão Médio";
+  static String residpb = "03 - Residência Padrão Baixo";
+  static String hotel = "04 - Hotel (Exceto lavanderia e cozinha)";
+  static String alojprov = "05 - Alojamento Provisório";
 
-  //     print("$fossaPrincipal.qntidadeEmDouble");
-  //     print("$fossaPrincipal.contDiariaOcup");
-  //     print("$fossaPrincipal.pDetEsgoto");
-  //   }
-  // }
+  static String fabrica = "01 - Fábrica em geral";
+  static String escritorio = "02 - Escritório";
+  static String edifpub = "03 - Edifícios públicos ou comerciais";
+  static String escolas = "04 - Escolas (externatos) e locais de\n longa permanência";
+  static String bares = "05 - Bares";
+  static String restaurantes = "06 - Restaurantes e similares";
+  static String cinemas = "07 - Cinemas, teatros e locais de curta\n permanência";
+  static String sanitpubs = "08 - Sanitários públicos";
 
-  static final List<DropdownMenuItem<int>> dropDownList1 = [
-    const DropdownMenuItem(child: Text("Clique para selecionar"), value: 0),
-    const DropdownMenuItem(child: Text("Permanente"), value: 1),
-    const DropdownMenuItem(child: Text("Temporária"), value: 2),
+  Future initialize() async {}
+
+  static final List<DropdownMenuItem<int>> ocupTipoList = [
+    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
+    DropdownMenuItem(child: Text(perm), value: 1),
+    DropdownMenuItem(child: Text(temp), value: 2),
   ];
 
-  static final List<DropdownMenuItem<int>> dropDownList2 = [
-    const DropdownMenuItem(child: Text("Clique para selecionar"), value: 0),
-    const DropdownMenuItem(child: Text("01 - Residência Padrão Alto"), value: 1),
-    const DropdownMenuItem(child: Text("02 - Residência Padrão Médio"), value: 2),
-    const DropdownMenuItem(child: Text("03 - Residência Padrão Baixo"), value: 3),
-    const DropdownMenuItem(child: Text("04 - Hotel (Exceto lavanderia e cozinha)"), value: 4),
-    const DropdownMenuItem(child: Text("05 - Alojamento Provisório"), value: 5),
+  static final List<DropdownMenuItem<int>> predTipPermList = [
+    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
+    DropdownMenuItem(child: Text(residpa), value: 1),
+    DropdownMenuItem(child: Text(residpm), value: 2),
+    DropdownMenuItem(child: Text(residpb), value: 3),
+    DropdownMenuItem(child: Text(hotel), value: 4),
+    DropdownMenuItem(child: Text(alojprov), value: 5),
   ];
+
+  static final List<DropdownMenuItem<int>> predTipTempList = [
+    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
+    DropdownMenuItem(child: Text(fabrica), value: 1),
+    DropdownMenuItem(child: Text(escritorio), value: 2),
+    DropdownMenuItem(child: Text(edifpub), value: 3),
+    DropdownMenuItem(child: Text(escolas), value: 4),
+    DropdownMenuItem(child: Text(bares), value: 5),
+    DropdownMenuItem(child: Text(restaurantes), value: 6),
+    DropdownMenuItem(child: Text(cinemas), value: 7),
+    DropdownMenuItem(child: Text(sanitpubs), value: 8),
+  ];
+
+  static String parseValorOcup(int valorOcup) {
+    switch (valorOcup) {
+      case 1:
+        return perm;
+      case 2:
+        return temp;
+      default:
+        return "";
+    }
+  }
+
+  static String parseValorPred(int valorOcup, int valorPred) {
+    switch (valorOcup) {
+      case 1:
+        switch (valorPred) {
+          case 1:
+            return residpa;
+          case 2:
+            return residpm;
+          case 3:
+            return residpb;
+          case 4:
+            return hotel;
+          case 5:
+            return alojprov;
+          default:
+            return "";
+        }
+      case 2:
+        switch (valorPred) {
+          case 1:
+            return fabrica;
+          case 2:
+            return escritorio;
+          case 3:
+            return edifpub;
+          case 4:
+            return escolas;
+          case 5:
+            return bares;
+          case 6:
+            return restaurantes;
+          case 7:
+            return cinemas;
+          case 8:
+            return sanitpubs;
+          default:
+            return "";
+        }
+      default:
+        return "";
+    }
+  }
 }
