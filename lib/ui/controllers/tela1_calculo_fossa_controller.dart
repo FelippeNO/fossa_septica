@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fossa_septica/core/scale.dart';
 import 'package:fossa_septica/entities/entities.dart';
 
 class Tela1Controller {
@@ -31,30 +32,30 @@ class Tela1Controller {
   Future initialize() async {}
 
   static final List<DropdownMenuItem<int>> ocupTipoList = [
-    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
-    DropdownMenuItem(child: Text(perm), value: 1),
-    DropdownMenuItem(child: Text(temp), value: 2),
+    DropdownMenuItem(child: Text(cliqueParaSelecionar, style: TextStyle(fontSize: AppFontSize.s3)), value: 0),
+    DropdownMenuItem(child: Text(perm, style: TextStyle(fontSize: AppFontSize.s3)), value: 1),
+    DropdownMenuItem(child: Text(temp, style: TextStyle(fontSize: AppFontSize.s3)), value: 2),
   ];
 
   static final List<DropdownMenuItem<int>> predTipPermList = [
-    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
-    DropdownMenuItem(child: Text(residpa), value: 1),
-    DropdownMenuItem(child: Text(residpm), value: 2),
-    DropdownMenuItem(child: Text(residpb), value: 3),
-    DropdownMenuItem(child: Text(hotel), value: 4),
-    DropdownMenuItem(child: Text(alojprov), value: 5),
+    DropdownMenuItem(child: Text(cliqueParaSelecionar, style: TextStyle(fontSize: AppFontSize.s3)), value: 0),
+    DropdownMenuItem(child: Text(residpa, style: TextStyle(fontSize: AppFontSize.s3)), value: 1),
+    DropdownMenuItem(child: Text(residpm, style: TextStyle(fontSize: AppFontSize.s3)), value: 2),
+    DropdownMenuItem(child: Text(residpb, style: TextStyle(fontSize: AppFontSize.s3)), value: 3),
+    DropdownMenuItem(child: Text(hotel, style: TextStyle(fontSize: AppFontSize.s3)), value: 4),
+    DropdownMenuItem(child: Text(alojprov, style: TextStyle(fontSize: AppFontSize.s3)), value: 5),
   ];
 
   static final List<DropdownMenuItem<int>> predTipTempList = [
-    DropdownMenuItem(child: Text(cliqueParaSelecionar), value: 0),
-    DropdownMenuItem(child: Text(fabrica), value: 1),
-    DropdownMenuItem(child: Text(escritorio), value: 2),
-    DropdownMenuItem(child: Text(edifpub), value: 3),
-    DropdownMenuItem(child: Text(escolas), value: 4),
-    DropdownMenuItem(child: Text(bares), value: 5),
-    DropdownMenuItem(child: Text(restaurantes), value: 6),
-    DropdownMenuItem(child: Text(cinemas), value: 7),
-    DropdownMenuItem(child: Text(sanitpubs), value: 8),
+    DropdownMenuItem(child: Text(cliqueParaSelecionar, style: TextStyle(fontSize: AppFontSize.s3)), value: 0),
+    DropdownMenuItem(child: Text(fabrica, style: TextStyle(fontSize: AppFontSize.s3)), value: 1),
+    DropdownMenuItem(child: Text(escritorio, style: TextStyle(fontSize: AppFontSize.s3)), value: 2),
+    DropdownMenuItem(child: Text(edifpub, style: TextStyle(fontSize: AppFontSize.s3)), value: 3),
+    DropdownMenuItem(child: Text(escolas, style: TextStyle(fontSize: AppFontSize.s3)), value: 4),
+    DropdownMenuItem(child: Text(bares, style: TextStyle(fontSize: AppFontSize.s3)), value: 5),
+    DropdownMenuItem(child: Text(restaurantes, style: TextStyle(fontSize: AppFontSize.s3)), value: 6),
+    DropdownMenuItem(child: Text(cinemas, style: TextStyle(fontSize: AppFontSize.s3)), value: 7),
+    DropdownMenuItem(child: Text(sanitpubs, style: TextStyle(fontSize: AppFontSize.s3)), value: 8),
   ];
 
   static String parseValorOcup(int valorOcup) {

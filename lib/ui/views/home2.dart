@@ -47,21 +47,22 @@ class FossaSeptica2State extends State<FossaSeptica2> {
                       Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(25),
+                            padding: EdgeInsets.all(Scale.width(8)),
+
                             child: PrimaryRoundedBox(
                               'O que você deseja calcular?',
                               fontSize: AppFontSize.s1,
                             ), //fim primeiro texto com fundo laranja
                           ),
                           Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(Scale.width(3)),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
                                   // primeira linha de texto e opcao
-                                  padding: const EdgeInsets.all(3.0),
+                                  padding: EdgeInsets.all(Scale.width(3)),
                                   child: SquareButton(
                                     onPressed: () => Navigator.of(context)
                                         .push(MaterialPageRoute(builder: (context) => Tela1CalculoFossa())),
@@ -69,11 +70,10 @@ class FossaSeptica2State extends State<FossaSeptica2> {
                                   ),
                                 ),
                                 Padding(
-                                  // texto 1
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(Scale.width(3)),
                                   child: SizedBox(
-                                    height: 150,
-                                    width: 150,
+                                    height: Scale.width(40),
+                                    width: Scale.width(40),
                                     child: Center(
                                       child: Text(
                                         "Fossa Séptica e o\n Sumidouro",
@@ -88,8 +88,7 @@ class FossaSeptica2State extends State<FossaSeptica2> {
                             ),
                           ),
                           Padding(
-                            // segunda linha de texto e opcao
-                            padding: EdgeInsets.all(3.0),
+                            padding: EdgeInsets.all(Scale.width(3)),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -97,9 +96,8 @@ class FossaSeptica2State extends State<FossaSeptica2> {
                                 Padding(
                                   padding: EdgeInsets.all(Scale.width(3)),
                                   child: SizedBox(
-                                    //texto 2
-                                    height: 150,
-                                    width: 150,
+                                    height: Scale.width(40),
+                                    width: Scale.width(40),
                                     child: Center(
                                       child: Text(
                                         "Somente a Fossa Séptica",
@@ -124,7 +122,7 @@ class FossaSeptica2State extends State<FossaSeptica2> {
                     ])),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(Scale.width(2)),
                 child: PrimaryRoundedBoxButton("Sobre o App", onPressed: () {
                   showDialog(
                       context: context,

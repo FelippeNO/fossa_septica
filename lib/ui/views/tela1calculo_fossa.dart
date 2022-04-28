@@ -6,6 +6,7 @@ import 'package:fossa_septica/core/scale.dart';
 import 'package:fossa_septica/main.dart';
 import 'package:fossa_septica/ui/controllers/tela1_calculo_fossa_controller.dart';
 import 'package:fossa_septica/ui/views/tela2.dart';
+import 'package:fossa_septica/ui/widgets/animated_information_tag.dart';
 import 'package:fossa_septica/ui/widgets/primary_dropdown_button.dart';
 import 'package:fossa_septica/ui/widgets/primary_rounded_box.dart';
 import 'package:fossa_septica/ui/widgets/primary_text_form_field.dart';
@@ -113,87 +114,35 @@ class _Tela1CalculoFossaState extends State<Tela1CalculoFossa> with SingleTicker
                         int valorPred = Tela1Controller.valorPred;
                         int valorOcup = Tela1Controller.valorOcup;
                         return Column(children: [
-                          AnimatedContainer(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(Scale.width(3.5)),
-                                gradient:
-                                    valorOcup != 0 ? AppGradients.transparent : AppGradients.primaryBlueGradientBCtTC),
-                            duration: Duration(milliseconds: 300),
-                            height: valorOcup != 0 ? Scale.width(11) : 0,
-                            child: AnimatedContainer(
-                              margin: EdgeInsets.all(Scale.width(0.5)),
-                              decoration: BoxDecoration(
-                                  gradient: AppGradients.supernovaGradient,
-                                  borderRadius: BorderRadius.circular(Scale.width(3))),
-                              transformAlignment: Alignment.center,
-                              duration: Duration(milliseconds: 50),
-                              height: valorOcup != 0 ? Scale.width(10) : 0,
-                              child: Padding(
-                                padding: primaryPadding,
-                                child: Text(
-                                  "Tipo da Ocupação: " + Tela1Controller.parseValorOcup(valorOcup),
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: AppFontSize.s3, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
+                          AnimatedInformationTag(
+                            text: "Tipo da Ocupação: " + Tela1Controller.parseValorOcup(valorOcup),
+                            borderGradient:
+                                valorOcup != 0 ? AppGradients.transparent : AppGradients.primaryBlueGradientBCtTC,
+                            heightWithBorder: valorOcup != 0 ? Scale.width(11) : 0,
+                            heightWithoutBorder: valorOcup != 0 ? Scale.width(10) : 0,
                           ),
                           SizedBox(height: Scale.width(2)),
-                          AnimatedContainer(
-                            decoration: BoxDecoration(
-                                gradient: AppGradients.supernovaGradient,
-                                borderRadius: BorderRadius.circular(Scale.width(3))),
-                            transformAlignment: Alignment.center,
-                            duration: Duration(milliseconds: 200),
-                            height: valorPred != 0 ? Scale.width(14) : 0,
-                            //width: Scale.width(70),
-                            child: Padding(
-                              padding: primaryPadding,
-                              child: Text(
-                                "Tipo do Prédio: " + Tela1Controller.parseValorPred(valorOcup, valorPred),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: AppFontSize.s3, fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                          AnimatedInformationTag(
+                            text: "Tipo do Prédio: " + Tela1Controller.parseValorPred(valorOcup, valorPred),
+                            borderGradient:
+                                valorPred != 0 ? AppGradients.transparent : AppGradients.primaryBlueGradientBCtTC,
+                            heightWithBorder: valorPred != 0 ? Scale.width(15) : 0,
+                            heightWithoutBorder: valorPred != 0 ? Scale.width(16) : 0,
                           ),
                           SizedBox(height: Scale.width(2)),
-                          AnimatedContainer(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(Scale.width(3.5)),
-                                gradient: (Tela1Controller.controleQntd.text != "0" ||
-                                        Tela1Controller.controleQntd.text.isNotEmpty)
-                                    ? AppGradients.transparent
-                                    : AppGradients.primaryBlueGradientBCtTC),
-                            duration: Duration(milliseconds: 300),
-                            height: (Tela1Controller.controleQntd.text != "0" ||
-                                    Tela1Controller.controleQntd.text.isNotEmpty)
+                          AnimatedInformationTag(
+                            text: "Pessoas: " + Tela1Controller.controleQntd.text,
+                            heightWithBorder: (Tela1Controller.controleQntd.text.isNotEmpty ||
+                                    Tela1Controller.controleQntd.text == "0")
                                 ? Scale.width(11)
                                 : 0,
-                            width: Scale.width(42),
-                            child: AnimatedContainer(
-                              margin: EdgeInsets.symmetric(horizontal: Scale.width(0.5), vertical: Scale.width(0.5)),
-                              decoration: BoxDecoration(
-                                  gradient: AppGradients.supernovaGradient,
-                                  borderRadius: BorderRadius.circular(Scale.width(3))),
-                              transformAlignment: Alignment.center,
-                              duration: Duration(milliseconds: 50),
-                              height: (Tela1Controller.controleQntd.text != "0" ||
-                                      Tela1Controller.controleQntd.text.isNotEmpty)
-                                  ? Scale.width(10)
-                                  : 0,
-                              width: Scale.width(40),
-                              child: Padding(
-                                padding: primaryPadding,
-                                child: Text(
-                                  "Pessoas:" + Tela1Controller.controleQntd.text,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: AppFontSize.s3, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
+                            heightWithoutBorder: (Tela1Controller.controleQntd.text.isNotEmpty ||
+                                    Tela1Controller.controleQntd.text == "0")
+                                ? Scale.width(10)
+                                : 0,
+                            borderGradient: (Tela1Controller.controleQntd.text.isEmpty)
+                                ? AppGradients.transparent
+                                : AppGradients.primaryBlueGradientBCtTC,
                           ),
                           ElevatedButton(
                             style: ButtonStyle(

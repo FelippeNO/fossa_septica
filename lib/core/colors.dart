@@ -29,6 +29,12 @@ class AppGradients {
     AppColors.cream,
   ]);
 
+  static LinearGradient supernovaGradientDark =
+      LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [
+    AppColors.supernova.withOpacity(0.8),
+    Color.fromARGB(255, 255, 153, 0),
+  ]);
+
   static LinearGradient transparent = LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,

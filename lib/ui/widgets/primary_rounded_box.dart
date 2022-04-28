@@ -13,13 +13,17 @@ class PrimaryRoundedBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Scale.width(75),
-      decoration: BoxDecoration(color: color, borderRadius: AppBorderRadius.brAll6),
+      decoration: BoxDecoration(borderRadius: AppBorderRadius.brAll6, gradient: AppGradients.supernovaGradientDark),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: Scale.width(3)),
         child: Center(
           child: Text(
             text,
-            style: TextStyle(color: AppColors.dodgerBluePRIMARY, fontWeight: FontWeight.bold, fontSize: fontSize),
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 89, 255),
+              fontWeight: FontWeight.bold,
+              fontSize: fontSize,
+            ),
             textAlign: TextAlign.center,
           ),
         ),
